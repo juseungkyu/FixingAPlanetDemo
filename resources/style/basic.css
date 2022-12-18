@@ -1,0 +1,624 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+h1 { 
+    font-size: 35px;
+}
+h2 { 
+    font-size: 25px;
+}
+h3 { 
+    font-size: 20px;
+}
+p {
+    font-size: 15px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-300px {
+    width: 300px;
+}
+
+.w-1000px {
+    width: 1000px;
+}
+
+.w-10px {
+    width: 10px;
+}
+
+.btn {
+    border: none;
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: 1px solid white;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn.small {
+    width: 150px !important;
+    height: 50px;
+}
+
+.main-btn {
+    width: 150px;
+    height: 50px;
+}
+
+.bottom-absolute {
+    position: absolute;
+    bottom: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.d-block {
+    display: block;
+}
+.left-top .d-block {
+    display: block;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+body {
+    padding-top: 1000px;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    background-image: url('../image/skybox/space_dn.png');
+    background-size: cover;
+}
+
+.fix-full {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    filter: blur(100px);
+    transition: 0.5s;
+
+    z-index: 5;
+}
+
+.fix-full.active {
+    visibility: visible;
+    filter: blur(0);
+    opacity: 1;
+    z-index: 10;
+}
+
+.canvas-container>* {
+    /* width: 150px;
+    height: 150px; */
+    /* background-color: #555555; */
+    color: white;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+}
+/* 기본 설정 끝 */
+
+/* UI */
+
+.canvas-container .planet-info {
+    text-align: center;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.canvas-container .planet-info>* {
+    text-align: center;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.map{
+    background-color: #555555;
+    /* height: 150px; */
+    width: 150px;
+    position: relative;
+}
+
+.tool {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555555;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.left-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.center-top {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    padding-top: 20px;
+}
+
+.right-top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
+
+.left-center {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.right-center {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+}
+
+.center-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 400px;
+}
+
+.right-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0%;
+}
+
+.map canvas {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.right-bottom .tool {
+    position: absolute;
+    transition: 0.5s;
+}
+
+.right-bottom .tool:nth-child(1) {
+    left: 0px;
+    top: 100px;
+}
+
+.right-bottom .tool:nth-child(2) {
+    left: 45px;
+    top: 10px;
+}
+
+.right-bottom .tool:nth-child(3) {
+    left: 10px;
+    top: 45px;
+}
+
+.right-bottom .tool:nth-child(4) {
+    left: 100px;
+    top: 0px;
+}
+
+.right-bottom .tool:last-child {
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    line-height: 70px;
+    left: 60px;
+    top: 60px;
+}
+
+.text-form {
+    width: 350px;
+    height: 50px;
+    /* border: 1px solid red; */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.text-form>input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+}
+
+.text-form>.label {
+    margin-left: 10px;
+}
+
+.textarea-form {
+    width: 350px;
+    height: 250px;
+    /* border: 1px solid red; */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textarea-form>textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    left: 0;
+    top: 0;
+    resize: none;
+    font-size: 18px;
+}
+
+.textarea-form>.label {
+    margin-left: 10px;
+}
+
+.color-brash-type {
+    color: black;
+}
+
+.continent-brash-type {
+    color: black;
+}
+
+.cloud-brash-type {
+    color: black;
+}
+
+/* tool */
+
+.tool {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555555;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.continent-down i{
+    transform: rotateZ(180deg);
+}
+
+.tool {
+    transition: 0.5s;
+}
+
+.tool.active {
+    transform: scale(1.2);
+}
+
+.rotate-range {
+    transform-origin: left top;
+    transform: rotateZ(270deg) translateY(-50%);
+    width: 150px;
+    margin-top: 150px;
+    margin-left: 50%;
+}
+
+.range-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 50px;
+    height: 220px;
+}
+
+.right-bottom {
+    width: 150px;
+    height: 150px;
+}
+
+.color-view {
+    background-color: aqua;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 40px;
+}
+
+/*tool 종료*/
+/*ui 종료*/
+
+
+/*functional dom*/
+
+.wait {
+    visibility: hidden;
+    opacity: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000000;
+    transition: 0.5s;
+}
+
+.wait.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tutorial {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000001;
+    transition: 0.5s;
+}
+
+.tutorial.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*functional dom 종료*/
+
+
+/* main-container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+.session-btns {
+    display: none;
+}
+
+.session-btns.active {
+    display: flex;
+}
+
+/* main-container 종료*/
+
+/* information-container */
+
+.information-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information-container table {
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+}
+
+.information-container td {
+    vertical-align: text-top;
+}
+
+.information-container .main-btn {
+    width: 100%;
+}
+
+/* information-container 종료 */
+
+/* planet-create-container */
+
+.planet-create-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* planet-create-container 종료*/
+
+/*info-update-container*/
+.info-update-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+/*info-update-container 종료*/
+
+
+/*list-container*/
+
+.list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.list-container .planet-table {
+    width: 1000px;
+    height: 80vh;
+    /* background-color: #555555; */
+    overflow: hidden;
+}
+
+.planet-table .card{
+    width: 95%;
+    height: 150px;
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.planet-table .card:last-child {
+    margin-bottom: 0px;
+}
+
+.planet-table .card img {
+    width: 300px;
+    height: 100%;
+}
+
+.planet-table .card .text {
+    width: calc(100% - 300px);
+    height: 100%;
+    padding: 20px;
+}
+
+.planet-table .card .text h3{
+    margin-bottom: 10px;
+}
+
+.planet-table .card .text .creater {
+    margin-top: 10px;
+    font-weight: 900;
+}
+
+.planet-table .card .text .remove-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.scroll-bar {
+    width: 10px;
+    height: 100%;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    justify-content: center;
+}
+
+.scroll-bar i {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    cursor: pointer;
+    transform: rotateZ(270deg);
+}
+
+/*list-container 종료*/
+
+
+/* user-container */
+
+.user-container>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    filter: blur(100px);
+    transition: 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-container>div.active {
+    visibility: visible;
+    filter: blur(0);
+    opacity: 1;
+}
+
+
+/* user-container  종료*/
