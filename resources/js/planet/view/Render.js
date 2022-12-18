@@ -231,12 +231,12 @@ export default class Render {
      */
     setSkybox() {
         const materialArray = [];
-        const texture_ft = new THREE.TextureLoader().load('./resources/image/skybox/space_ft.png');
-        const texture_bk = new THREE.TextureLoader().load('./resources/image/skybox/space_bk.png');
-        const texture_up = new THREE.TextureLoader().load('./resources/image/skybox/space_up.png');
-        const texture_dn = new THREE.TextureLoader().load('./resources/image/skybox/space_dn.png');
-        const texture_rt = new THREE.TextureLoader().load('./resources/image/skybox/space_rt.png');
-        const texture_lf = new THREE.TextureLoader().load('./resources/image/skybox/space_lf.png');
+        const texture_ft = new THREE.TextureLoader().load('./resources/image/skybox/space_ft.jpg');
+        const texture_bk = new THREE.TextureLoader().load('./resources/image/skybox/space_bk.jpg');
+        const texture_up = new THREE.TextureLoader().load('./resources/image/skybox/space_up.jpg');
+        const texture_dn = new THREE.TextureLoader().load('./resources/image/skybox/space_dn.jpg');
+        const texture_rt = new THREE.TextureLoader().load('./resources/image/skybox/space_rt.jpg');
+        const texture_lf = new THREE.TextureLoader().load('./resources/image/skybox/space_lf.jpg');
 
         materialArray.push(new THREE.MeshBasicMaterial({ map: texture_ft }));
         materialArray.push(new THREE.MeshBasicMaterial({ map: texture_bk }));
