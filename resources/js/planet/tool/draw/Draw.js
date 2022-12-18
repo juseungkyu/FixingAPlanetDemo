@@ -1,4 +1,4 @@
-import Tool from "/resources/js/planet/tool/Tool.js"
+import Tool from "../Tool.js"
 
 export default class Draw extends Tool {
     constructor(render, canvasControl) {

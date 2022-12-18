@@ -1,9 +1,9 @@
-import DrawCloud from '/resources/js/planet/tool/draw/DrawCloud.js';
-import DrawContinent from '/resources/js/planet/tool/draw/DrawContinent.js';
-import DrawWater from '/resources/js/planet/tool/draw/DrawWater.js';
-import DrawColor from '/resources/js/planet/tool/draw/DrawColor.js';
+import DrawCloud from "./draw/DrawCloud.js"
+import DrawContinent from "./draw/DrawContinent.js"
+import DrawWater from "./draw/DrawWater.js"
+import DrawColor from "./draw/DrawColor.js"
 
-import MoveTool from '/resources/js/planet/tool/move/MoveTool.js';
+import MoveTool from "./move/MoveTool.js"
 
 export default class ToolControl {
     constructor(canvasControl, render, container) {
